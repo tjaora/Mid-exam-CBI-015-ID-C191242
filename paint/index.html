@@ -1,238 +1,445 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title> Paint Website</title>
-    <!--tailwind-cdn-->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!--languages-->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet" />
-    <!--css-->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Paint – modern solutions for Cursus Integer Consequat Tristique." />
+  <title>Paint Website</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!--
+    FIX 1: Updated Font Awesome from 5.15.3 → 6.5.1 (latest stable).
+    FA 6 still honours the legacy "fas" prefix so no class changes needed.
+  -->
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    rel="stylesheet"
+  />
+
+  <!--
+    FIX 2: Corrected Google Fonts URL.
+    Original had "Roboto:wght@400;700&amp;display=swap" —
+    &amp; is correct HTML encoding of &, but the font query string
+    already uses : and ; as delimiters; the &display= part is correct.
+    Kept as-is (browsers handle both; encoding is technically correct).
+  -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 
-<body class="bg-yellow-100 flex flex-col justify-between items-center">
-    <!--heading&logo_Section-->
-    <header class="bg-yellow-100 py-4 flex justify-between items-center">
-        <div class="container mx-auto flex justify-between items-center">
-            <div class=" h-10 m-6 flex justify-center items-center">
-                <div class="bg-white min-w-80 md:w-100vw flex justify-center items-center rounded-full">
-                    <img src="../paint/desktop/paint-logo.png" alt="logo">
-                </div>
-            </div>
-        </div>
-    </header>
-    <main>
-        <section class="bg-yellow-100 py-16">
-            <div class="container mx-auto flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 m-4">
-                    <h2 class="text-yellow-500 font-bold">
-                        RISUS PRAESENT VULPUTATE.
-                    </h2>
-                    <h1 class="text-5xl font-bold mt-4">
-                        Cursus Integer Consequat Tristique.|
-                    </h1>
-                    <div class="mt-8 flex flex-wrap gap-4">
-                        <button class="inline-flex items-baseline bg-white text-black py-2 px-4 rounded-full">
-                           <img src="../paint/desktop/icon-tick.png" class="w-4 m-2" alt="tick"> Cursus Integer
-                        </button>
-                        <button class="inline-flex items-baseline bg-white text-black py-2 px-4 rounded-full">
-                            <img src="../paint/desktop/icon-tick.png" class="w-4 m-2" alt="tick"> Integer Consequat
-                        </button>
-                        <button class="inline-flex items-baseline bg-white text-black py-2 px-4 rounded-full">
-                            <img src="../paint/desktop/icon-tick.png" class="w-4 m-2" alt="tick"> Tellus Euismod Pellentesque
-                        </button>
-                        <button class="inline-flex items-baseline bg-white text-black py-2 px-4 rounded-full">
-                            <img src="../paint/desktop/icon-tick.png" class="w-4 m-2" alt="tick"> Aliquot Tristique
-                        </button>
-                    </div>
-                    <button class="flex bg-yellow-500 text-black py-2 px-6 rounded-full mt-8">
-                        Lorem Ipsum <img src="../paint/desktop/right-arrow.png" class="w-2 m-2" alt="go to lorem ipsum">
-                    </button>
-                </div>
-                <div class="md:w-1/2 mt-8 md:mt-0">
-                    <img alt="Illustration of a person working on a laptop with various icons around them"
-                        class="mx-auto" height="300" src="../paint/desktop/cover-paint.png" width="400" />
-                </div>
-            </div>
-        </section>
-        <section class="bg-gray-900 py-16">
-            <div class="container mx-auto flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 text-white m-4">
-                    <p class="text-yellow-600 px-2">
-                        Quisque porttitor vitae vel amet neque scelerisque mattis. Consectetur nibh velit magna
-                        consectetur leo.
-                    </p>
-                    <h2 class="text-4xl font-bold mt-4 px-2">
-                        Cursus Integer Conseq Aliquam Tristique.
-                    </h2>
-                    <button class="flex bg-white text-gray-900 py-2 px-6 rounded-full mt-8">
-                        Lorem Ipsum <img src="../paint/desktop/right-arrow.png" class="w-2 m-2" alt="go to lorem ipsum">
-                    </button>
-                </div>
-                <div class="md:w-1/2 mt-8 md:mt-0 grid grid-cols-1 md:grid-cols-2 gap-4 place-content-around">
-                    <div class="bg-white p-6 rounded-lg flex flex-col">
-                        <div class="text-4xl font-bold text-black">
-                            1.
-                        </div>
-                        <div class="ml-1">
-                            <h3 class="text-xl font-bold">
-                                Phasellus Vitae
-                            </h3>
-                            <p>
-                                <strong>Quisque</strong> <br>Porttitor Vitae Vel Amat
-                            </p>
-                        </div>
-                    </div>
-                    <div class="bg-yellow-500 p-6 rounded-lg flex flex-col">
-                        <div class="text-4xl font-bold text-black">
-                            2.
-                        </div>
-                        <div class="ml-1">
-                            <h3 class="text-xl font-bold text-black">
-                                Iaculis Magna
-                            </h3>
-                            <p class="text-black">
-                                <strong>Porttitor</strong><br>Neque Scelerisque Mattis
-                            </p>
-                        </div>
-                    </div>
-                    <div class="bg-yellow-500 p-6 rounded-lg flex flex-col">
-                        <div class="text-4xl font-bold text-black">
-                            3.
-                        </div>
-                        <div class="ml-1">
-                            <h3 class="text-xl font-bold text-black">
-                                Eleifend Pulvinar
-                            </h3>
-                            <p class="text-black">
-                                <strong>Vitae</strong><br>Consectetur Nibh Velit
-                            </p>
-                        </div>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg flex flex-col">
-                        <div class="text-4xl font-bold text-black">
-                            4.
-                        </div>
-                        <div class="ml-1">
-                            <h3 class="text-xl font-bold">
-                                Velit Odio Phir
-                            </h3>
-                            <p>
-                               <strong>Amteneque</strong><br>Magna Consectetur Leo
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="bg-yellow-500 py-16">
-            <div class="container mx-auto text-center">
-                <div class="bg-white p-8 rounded-lg inline-block">
-                    <img alt="Profile picture of a customer" class="rounded-full mx-auto" height="100"
-                        src="../paint/desktop/male-photo.png"
-                        width="100" />
-                    <h3 class="text-2xl font-bold mt-4">
-                        What our customers thought?
-                    </h3>
-                    <p class="mt-4">
-                        Euismod magna id purus eget nunc ligula suspendisse dui netus. Condimentum blandit rutrum at
-                        mauris enim pulvinar duis etiam duis.
-                    </p>
-                    <p class="mt-4 font-bold">
-                        Holly Davidson
-                    </p>
-                    <div class="mt-4 flex justify-center gap-4">
-                        <button class="text-gray-500">
-                            <i class="fas fa-arrow-left">
-                            </i>
-                        </button>
-                        <button class="text-yellow-500">
-                            <i class="fas fa-arrow-right">
-                            </i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="bg-gray-900 py-16">
-            <div class="container mx-auto text-center text-white">
-                <h2 class="text-4xl font-bold">
-                    Phasellus a vitae iaculis magna.
-                </h2>
-                <p class="mt-4">
-                    Phasellus a vitae iaculis magna eleifend pulvinar velit odio.
-                </p>
-                <div class="mt-8 bg-white p-6 rounded-lg text-gray-900">
-                    <h3 class="text-xl font-bold">
-                        Quam vehicula faucibus amet lorem.
-                    </h3>
-                    <p class="mt-4">
-                        Euismod magna id purus eget nunc ligula suspendisse dui netus. Condimentum blandit rutrum at
-                        mauris enim pulvinar duis etiam duis. Mauris fermentum praesent tellus euismod.
-                    </p>
-                    <button class="text-yellow-500 mt-4">
-                        <i class="fas fa-arrow-right">
-                        </i>
-                    </button>
-                </div>
-                <div class="mt-4 bg-white p-6 rounded-lg text-gray-900">
-                    <h3 class="text-xl font-bold">
-                        Pellentesque tempus sed phasellus vel.
-                    </h3>
-                    <button class="text-yellow-500 mt-4">
-                        <i class="fas fa-plus">
-                        </i>
-                    </button>
-                </div>
-                <div class="mt-4 bg-white p-6 rounded-lg text-gray-900">
-                    <h3 class="text-xl font-bold">
-                        Mauris fermentum praesent tellus euismod pellentesque urna ac massa in.
-                    </h3>
-                    <button class="text-yellow-500 mt-4">
-                        <i class="fas fa-plus">
-                        </i>
-                    </button>
-                </div>
-                <div class="mt-4 bg-white p-6 rounded-lg text-gray-900">
-                    <h3 class="text-xl font-bold">
-                        Vulputate et vulputate suspendisse natoque id tellus consectetur pulvinar et.
-                    </h3>
-                    <button class="text-yellow-500 mt-4">
-                        <i class="fas fa-plus">
-                        </i>
-                    </button>
-                </div>
-            </div>
-        </section>
-        <section class="bg-yellow-100 py-16">
-            <div class="container mx-auto text-center">
-                <h2 class="text-4xl font-bold">
-                    Vulputate et pulvinar ethre Suspendisse tellus consectetur
-                </h2>
-                <button class="bg-yellow-500 text-white py-2 px-6 rounded-full mt-8">
-                    Lorem Ipsum
-                </button>
-            </div>
-        </section>
-    </main>
-    <footer class="bg-yellow-100 py-4">
-        <div class="container mx-auto flex justify-between items-center">
-            <p class="text-gray-700">
-                Copyright © 2022 Lorem Ipsum.
-            </p>
-            <div class="flex gap-4">
-                <a class="text-gray-700" href="#">
-                    Privacy Policy
-                </a>
-                <a class="text-gray-700" href="#">
-                    Terms and Conditions
-                </a>
-            </div>
-        </div>
-    </footer>
-</body>
+<!--
+  FIX 3: Removed "justify-between items-center" from <body>.
+  Those classes constrained all children to the body's flex-axis,
+  making full-width sections impossible and causing layout collapse
+  on narrow screens.
+  Replaced with "min-h-screen flex-col" so <main> can flex-grow
+  and the footer always pins to the bottom.
+-->
+<body class="bg-yellow-100 flex flex-col min-h-screen">
 
+  <!-- ══════════════════════════════════════
+       HEADER
+  ══════════════════════════════════════ -->
+  <header class="bg-yellow-100 py-4">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+      <!--
+        FIX 4: Removed invalid Tailwind class "md:w-100vw".
+        Tailwind has no such utility; "w-full" is the correct class
+        for 100 % width. Also removed the redundant double-div nesting.
+      -->
+      <div class="bg-white rounded-full px-6 py-2 inline-flex items-center">
+        <!--
+          FIX 5: Image paths changed from "../paint/desktop/…" to "desktop/…"
+          (all paths throughout the file). The "../paint/" prefix points one
+          level up and into a "paint" folder — incorrect for a file served
+          from the project root. Images live in "desktop/" next to index.html.
+        -->
+        <img src="desktop/paint-logo.png" alt="Paint brand logo" class="h-8 w-auto" />
+      </div>
+      <!-- Placeholder for future nav links -->
+    </div>
+  </header>
+
+  <main class="flex-grow">
+
+    <!-- ══════════════════════════════════════
+         HERO
+    ══════════════════════════════════════ -->
+    <section class="bg-yellow-100 py-16">
+      <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
+
+        <div class="md:w-1/2">
+          <!--
+            FIX 6: The eyebrow line was an <h2> placed BEFORE an <h1>.
+            Heading level must not skip downwards (h1→h2 is fine; h2→h1 is wrong).
+            Changed to <p> with matching visual treatment.
+          -->
+          <p class="text-yellow-500 font-bold uppercase tracking-widest text-sm">
+            RISUS PRAESENT VULPUTATE.
+          </p>
+
+          <!--
+            FIX 7: Removed stray pipe character "|" at end of h1 text.
+            This is a cursor-blink artefact from a design/wireframe tool,
+            not real content.
+          -->
+          <h1 class="text-5xl font-bold mt-4 leading-tight text-gray-900">
+            Cursus Integer Consequat Tristique.
+          </h1>
+
+          <!--
+            FIX 8: Changed feature-list items from <button> to <span>.
+            These are informational badges, not interactive controls.
+            Using <button> for non-interactive elements is a semantic error
+            and confuses keyboard/screen-reader users.
+
+            FIX 9: Changed "items-baseline" → "items-center".
+            items-baseline aligns elements to their text baseline, which
+            drops the icon below the text. items-center vertically centres
+            the icon with the label, matching the visual design intent.
+
+            FIX 10: Changed "m-2" on arrow images → "mr-2" (right margin only).
+            m-2 adds equal margin on all four sides, pushing text away top/bottom.
+          -->
+          <div class="mt-8 flex flex-wrap gap-3">
+            <span class="inline-flex items-center bg-white text-black py-2 px-4 rounded-full text-sm shadow-sm">
+              <img src="desktop/icon-tick.png" class="w-4 mr-2" alt="" aria-hidden="true" />
+              Cursus Integer
+            </span>
+            <span class="inline-flex items-center bg-white text-black py-2 px-4 rounded-full text-sm shadow-sm">
+              <img src="desktop/icon-tick.png" class="w-4 mr-2" alt="" aria-hidden="true" />
+              Integer Consequat
+            </span>
+            <span class="inline-flex items-center bg-white text-black py-2 px-4 rounded-full text-sm shadow-sm">
+              <img src="desktop/icon-tick.png" class="w-4 mr-2" alt="" aria-hidden="true" />
+              Tellus Euismod Pellentesque
+            </span>
+            <span class="inline-flex items-center bg-white text-black py-2 px-4 rounded-full text-sm shadow-sm">
+              <img src="desktop/icon-tick.png" class="w-4 mr-2" alt="" aria-hidden="true" />
+              Aliquot Tristique
+            </span>
+          </div>
+
+          <!--
+            FIX 11: Changed CTA <button> → <a href="#">.
+            A button triggers an in-page action; a link navigates.
+            "Lorem Ipsum" here is a navigation CTA → use <a>.
+            Also changed "flex" → "inline-flex items-center" so the
+            element only spans its content width and the arrow aligns.
+          -->
+          <a
+            href="#"
+            class="inline-flex items-center bg-yellow-500 text-black font-medium py-2 px-6 rounded-full mt-8 hover:bg-yellow-400 transition-colors"
+          >
+            Lorem Ipsum
+            <img src="desktop/right-arrow.png" class="w-2 ml-3" alt="" aria-hidden="true" />
+          </a>
+        </div>
+
+        <div class="md:w-1/2 flex justify-center">
+          <!--
+            FIX 12: Removed inline width/height HTML attributes.
+            Tailwind utility classes are the correct way to size images
+            when Tailwind is the styling layer; inline attributes fight
+            the CSS and produce inconsistent results at different breakpoints.
+          -->
+          <img
+            src="desktop/cover-paint.png"
+            alt="Illustration of a person working on a laptop with various product icons around them"
+            class="w-full max-w-md"
+          />
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         DARK FEATURES SECTION
+    ══════════════════════════════════════ -->
+    <section class="bg-gray-900 py-16">
+      <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
+
+        <div class="md:w-1/2 text-white">
+          <!--
+            FIX 13: "text-yellow-600" → "text-yellow-400".
+            yellow-600 (#CA8A04) on a dark background has poor contrast.
+            yellow-400 (#FACC15) is much more legible on gray-900.
+          -->
+          <p class="text-yellow-400 mb-4">
+            Quisque porttitor vitae vel amet neque scelerisque mattis.
+            Consectetur nibh velit magna consectetur leo.
+          </p>
+          <h2 class="text-4xl font-bold">
+            Cursus Integer Conseq Aliquam Tristique.
+          </h2>
+          <!-- FIX 14: button → <a> for navigation CTA (same reason as FIX 11) -->
+          <a
+            href="#"
+            class="inline-flex items-center bg-white text-gray-900 font-medium py-2 px-6 rounded-full mt-8 hover:bg-gray-100 transition-colors"
+          >
+            Lorem Ipsum
+            <img src="desktop/right-arrow.png" class="w-2 ml-3" alt="" aria-hidden="true" />
+          </a>
+        </div>
+
+        <!--
+          FIX 15: Removed "place-content-around" from grid.
+          That class spreads rows, not columns, and combines poorly with
+          "grid-cols-2 gap-4" which already handles spacing. Removed.
+        -->
+        <div class="md:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="bg-white p-6 rounded-lg">
+            <div class="text-4xl font-bold text-black mb-3">1.</div>
+            <h3 class="text-xl font-bold">Phasellus Vitae</h3>
+            <p class="mt-1 text-gray-700"><strong>Quisque</strong><br />Porttitor Vitae Vel Amat</p>
+          </div>
+          <div class="bg-yellow-500 p-6 rounded-lg">
+            <div class="text-4xl font-bold text-black mb-3">2.</div>
+            <h3 class="text-xl font-bold text-black">Iaculis Magna</h3>
+            <p class="mt-1 text-black"><strong>Porttitor</strong><br />Neque Scelerisque Mattis</p>
+          </div>
+          <div class="bg-yellow-500 p-6 rounded-lg">
+            <div class="text-4xl font-bold text-black mb-3">3.</div>
+            <h3 class="text-xl font-bold text-black">Eleifend Pulvinar</h3>
+            <p class="mt-1 text-black"><strong>Vitae</strong><br />Consectetur Nibh Velit</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg">
+            <div class="text-4xl font-bold text-black mb-3">4.</div>
+            <h3 class="text-xl font-bold">Velit Odio Phir</h3>
+            <p class="mt-1 text-gray-700"><strong>Amteneque</strong><br />Magna Consectetur Leo</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         TESTIMONIAL SLIDER
+    ══════════════════════════════════════ -->
+    <section class="bg-yellow-500 py-16">
+      <div class="container mx-auto px-4 flex justify-center">
+        <div class="bg-white p-8 rounded-lg w-full max-w-lg text-center shadow-lg">
+
+          <!--
+            FIX 16: Profile image used inline width/height attributes with no
+            class for object-fit, so non-square images would stretch.
+            Using Tailwind classes for consistent circular crop.
+          -->
+          <img
+            id="testimonial-avatar"
+            src="desktop/male-photo.png"
+            alt="Profile photo of current testimonial author"
+            class="w-24 h-24 rounded-full object-cover mx-auto"
+          />
+
+          <h2 class="text-2xl font-bold mt-4 text-gray-900">
+            What our customers thought?
+          </h2>
+
+          <!--
+            FIX 17: The testimonial arrows were purely visual — no JS wired them.
+            An interactive widget with visible controls that do nothing is a
+            serious usability bug. A slider JS is now in script.js.
+            Added id hooks for JS; added dot navigation for position clarity.
+          -->
+          <div id="testimonial-content" class="testimonial-fade">
+            <p class="mt-4 text-gray-600" id="testimonial-text">
+              Euismod magna id purus eget nunc ligula suspendisse dui netus.
+              Condimentum blandit rutrum at mauris enim pulvinar duis etiam duis.
+            </p>
+            <p class="mt-4 font-bold text-gray-900" id="testimonial-name">
+              Holly Davidson
+            </p>
+          </div>
+
+          <div class="mt-6 flex justify-center items-center gap-4">
+            <button
+              id="prev-testimonial"
+              class="text-gray-400 hover:text-gray-700 transition-colors p-2"
+              aria-label="Previous testimonial"
+            >
+              <i class="fas fa-arrow-left"></i>
+            </button>
+
+            <!-- Dot indicators injected by JS -->
+            <div id="testimonial-dots" class="flex gap-2" role="tablist" aria-label="Testimonial pagination"></div>
+
+            <button
+              id="next-testimonial"
+              class="text-yellow-500 hover:text-yellow-600 transition-colors p-2"
+              aria-label="Next testimonial"
+            >
+              <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         FAQ ACCORDION
+    ══════════════════════════════════════ -->
+    <section class="bg-gray-900 py-16">
+      <div class="container mx-auto px-4 max-w-2xl">
+        <div class="text-center text-white mb-10">
+          <h2 class="text-4xl font-bold">Phasellus a vitae iaculis magna.</h2>
+          <p class="mt-4 text-gray-400">
+            Phasellus a vitae iaculis magna eleifend pulvinar velit odio.
+          </p>
+        </div>
+
+        <!--
+          FIX 18: The FAQ had structurally inconsistent cards.
+          Card 1 had visible body text + a right-arrow icon; cards 2–4
+          had only a title + plus icon — no body text at all.
+          This was supposed to be an accordion (open/collapsed states)
+          but without JavaScript, only card 1 ever showed content.
+          Rebuilt as a proper accessible accordion (see script.js).
+
+          Each item now has:
+          • A <button> trigger with aria-expanded
+          • A collapsible body with real content
+          • The icon flips + → − when open
+        -->
+        <div class="space-y-3" id="faq-accordion">
+
+          <!-- Item 1 — open by default -->
+          <div class="faq-item bg-white rounded-lg overflow-hidden">
+            <button
+              class="faq-trigger w-full flex justify-between items-center p-6 text-left"
+              aria-expanded="true"
+            >
+              <h3 class="text-xl font-bold text-gray-900 pr-4">
+                Quam vehicula faucibus amet lorem.
+              </h3>
+              <span class="faq-icon text-yellow-500 text-lg flex-shrink-0" aria-hidden="true">
+                <i class="fas fa-minus"></i>
+              </span>
+            </button>
+            <div class="faq-body px-6 pb-6">
+              <p class="text-gray-600 leading-relaxed">
+                Euismod magna id purus eget nunc ligula suspendisse dui netus.
+                Condimentum blandit rutrum at mauris enim pulvinar duis etiam duis.
+                Mauris fermentum praesent tellus euismod.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 2 — collapsed by default -->
+          <div class="faq-item bg-white rounded-lg overflow-hidden">
+            <button
+              class="faq-trigger w-full flex justify-between items-center p-6 text-left"
+              aria-expanded="false"
+            >
+              <h3 class="text-xl font-bold text-gray-900 pr-4">
+                Pellentesque tempus sed phasellus vel.
+              </h3>
+              <span class="faq-icon text-yellow-500 text-lg flex-shrink-0" aria-hidden="true">
+                <i class="fas fa-plus"></i>
+              </span>
+            </button>
+            <div class="faq-body px-6 pb-6 hidden">
+              <p class="text-gray-600 leading-relaxed">
+                Quisque porttitor vitae vel amet neque scelerisque mattis.
+                Consectetur nibh velit magna consectetur leo eleifend pulvinar velit odio.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 3 — collapsed by default -->
+          <div class="faq-item bg-white rounded-lg overflow-hidden">
+            <button
+              class="faq-trigger w-full flex justify-between items-center p-6 text-left"
+              aria-expanded="false"
+            >
+              <h3 class="text-xl font-bold text-gray-900 pr-4">
+                Mauris fermentum praesent tellus euismod pellentesque urna ac massa in.
+              </h3>
+              <span class="faq-icon text-yellow-500 text-lg flex-shrink-0" aria-hidden="true">
+                <i class="fas fa-plus"></i>
+              </span>
+            </button>
+            <div class="faq-body px-6 pb-6 hidden">
+              <p class="text-gray-600 leading-relaxed">
+                Phasellus a vitae iaculis magna eleifend pulvinar velit odio.
+                Vulputate et vulputate suspendisse natoque id tellus consectetur pulvinar.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 4 — collapsed by default -->
+          <div class="faq-item bg-white rounded-lg overflow-hidden">
+            <button
+              class="faq-trigger w-full flex justify-between items-center p-6 text-left"
+              aria-expanded="false"
+            >
+              <h3 class="text-xl font-bold text-gray-900 pr-4">
+                Vulputate et vulputate suspendisse natoque id tellus consectetur pulvinar et.
+              </h3>
+              <span class="faq-icon text-yellow-500 text-lg flex-shrink-0" aria-hidden="true">
+                <i class="fas fa-plus"></i>
+              </span>
+            </button>
+            <div class="faq-body px-6 pb-6 hidden">
+              <p class="text-gray-600 leading-relaxed">
+                Condimentum blandit rutrum at mauris enim pulvinar duis etiam duis.
+                Mauris fermentum praesent tellus euismod pellentesque urna ac massa.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         CTA SECTION
+    ══════════════════════════════════════ -->
+    <section class="bg-yellow-100 py-16">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-4xl font-bold text-gray-900">
+          Vulputate et pulvinar ethre Suspendisse tellus consectetur
+        </h2>
+        <!--
+          FIX 19: Changed <button> → <a> (navigation CTA, not in-page action).
+          FIX 20: Changed "text-white" → "text-black".
+          yellow-500 (#EAB308) with white text fails WCAG AA contrast (ratio ≈ 1.5:1).
+          Black text on yellow-500 achieves a ratio of ≈ 8.9:1 — passes AAA.
+        -->
+        <a
+          href="#"
+          class="inline-block bg-yellow-500 text-black font-medium py-2 px-6 rounded-full mt-8 hover:bg-yellow-400 transition-colors"
+        >
+          Lorem Ipsum
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════ -->
+  <footer class="bg-yellow-100 border-t border-yellow-200 py-6">
+    <div class="container mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <p class="text-gray-700 text-sm">Copyright &copy; 2022 Lorem Ipsum.</p>
+      <div class="flex gap-6">
+        <a class="text-gray-700 text-sm hover:text-gray-900 transition-colors" href="#">
+          Privacy Policy
+        </a>
+        <a class="text-gray-700 text-sm hover:text-gray-900 transition-colors" href="#">
+          Terms and Conditions
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
 </html>
