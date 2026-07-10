@@ -1,3 +1,93 @@
+/* ════════════════════════════════════════════════════════════
+   PAINT WEBSITE  –  style.css
+   ════════════════════════════════════════════════════════════
+   Tailwind handles almost all styling via utility classes.
+   This file adds only what Tailwind CDN cannot:
+   • smooth accordion expand/collapse transitions
+   • testimonial fade animation
+   • reduced-motion safety
+   ════════════════════════════════════════════════════════════ */
+
+/* ── Base ─────────────────────────────────────────────────── */
 body {
-    font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+/* ── Accordion ────────────────────────────────────────────── */
+
+/*
+  The .faq-body element is toggled between its natural height
+  (open) and 0 (closed) by JS adding/removing "hidden".
+  Tailwind's "hidden" sets display:none which skips transitions.
+  We override to use max-height + opacity instead so the open/
+  close animates smoothly.
+*/
+.faq-body {
+  max-height: 500px;      /* large enough to fit any content    */
+  overflow: hidden;
+  opacity: 1;
+  transition:
+    max-height 0.35s ease,
+    opacity    0.25s ease,
+    padding    0.25s ease;
+}
+
+.faq-body.hidden {
+  display: block !important; /* override Tailwind's display:none   */
+  max-height: 0;
+  opacity: 0;
+  padding-bottom: 0;
+}
+
+/* Cursor: pointer on accordion triggers */
+.faq-trigger {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+.faq-trigger:focus-visible {
+  outline: 3px solid #EAB308; /* yellow-500 */
+  outline-offset: -3px;
+  border-radius: 0.5rem;
+}
+
+
+/* ── Testimonial fade ─────────────────────────────────────── */
+.testimonial-fade {
+  transition: opacity 0.25s ease;
+}
+.testimonial-fade.is-fading {
+  opacity: 0;
+}
+
+
+/* ── Testimonial dot indicators ─────────────────────────────*/
+.dot {
+  width:  0.5rem;
+  height: 0.5rem;
+  border-radius: 9999px;
+  background-color: #D1D5DB; /* gray-300 */
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.dot.active {
+  background-color: #EAB308; /* yellow-500 */
+  transform: scale(1.25);
+}
+.dot:focus-visible {
+  outline: 2px solid #EAB308;
+  outline-offset: 2px;
+}
+
+
+/* ── Reduced motion ─────────────────────────────────────────*/
+@media (prefers-reduced-motion: reduce) {
+  .faq-body,
+  .testimonial-fade,
+  .dot {
+    transition: none !important;
+  }
 }
